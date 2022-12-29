@@ -5,9 +5,9 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"kcc/kcc-toolkit/convert"
-	"kcc/kcc-toolkit/encode"
-	http "kcc/kcc-toolkit/webreq"
+	"mnc/commons-toolkit/convert"
+	"mnc/commons-toolkit/encode"
+	"mnc/commons-toolkit/http"
 
 	"github.com/thoas/go-funk"
 
@@ -118,7 +118,7 @@ func (s *GangaoSms) getPostData(msg *Message) string {
 	// 为了防止传输产生乱码, 先将字符串转化为gbk编码与服务商端保持一致，内容先进行BASE64编码，然后再URLENCODE编码。
 	content := url.QueryEscape(encode.Base64Encode(convert.ConvertStr2GBK(msg.Content)))
 
-	data := fmt.Sprintf("spid=%s&pwd=%s&mobiles=%s&sms=%s&seq=%s&id=%s", username, password, msg.Phone, content, msg.SourceId, msg.SourceId)
+	data := fmt.Sprintf("spid=%s&pwd=%s&mobiles=%s&sms=%s&seq=%s&id=", username, password, msg.Phone, content, msg.SourceId, msg.SourceId)
 
 	return data
 }
