@@ -2,8 +2,8 @@ package conf
 
 import (
 	"fmt"
+	"gitee.com/westfruit/kcc-toolkit/fileop"
 	"io"
-	"kcc/kcc-toolkit/fileop"
 	"os"
 	"os/exec"
 	"path"

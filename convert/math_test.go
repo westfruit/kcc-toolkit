@@ -1,7 +1,7 @@
 package convert_test
 
 import (
-	"kcc/kcc-toolkit/convert"
+	"gitee.com/westfruit/kcc-toolkit/convert"
 	"testing"
 )
 

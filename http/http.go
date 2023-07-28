@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"kcc/kcc-toolkit/convert"
+	"gitee.com/westfruit/kcc-toolkit/convert"
 )
 
 func Get(url string) (string, error) {
@@ -18,7 +18,7 @@ func GetWithHeaders(url string, headers map[string]string) (string, error) {
 	return doHttp(url, "Get", "", "", nil, headers)
 }
 
-//发送post请求
+// 发送post请求
 func Post(url string, data string) (string, error) {
 	return doHttp(url, "POST", "", data, nil, nil)
 }
@@ -27,7 +27,7 @@ func PostJson(url string, data interface{}) (string, error) {
 	return doHttp(url, "POST", "application/json", convert.ObjToJson(data), nil, nil)
 }
 
-//发送post请求，获取商家token
+// 发送post请求，获取商家token
 func PostWithAuth(url string, data string, username string, password string) (string, error) {
 
 	return doHttp(url, "POST", "application/json", data, &HttpBasicAuth{

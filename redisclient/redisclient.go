@@ -2,7 +2,7 @@ package redisclient
 
 import (
 	"context"
-	_ "kcc/kcc-toolkit/conf"
+	_ "gitee.com/westfruit/kcc-toolkit/conf"
 
 	redis "github.com/go-redis/redis/v8"
 	"github.com/sirupsen/logrus"

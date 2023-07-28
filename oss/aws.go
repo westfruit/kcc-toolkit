@@ -12,13 +12,12 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 
-	_ "kcc/kcc-toolkit/conf"
-	"kcc/kcc-toolkit/convert"
+	_ "gitee.com/westfruit/kcc-toolkit/conf"
+	"gitee.com/westfruit/kcc-toolkit/convert"
 )
 
 var (
 	awsPrefix = "[oss-aws]"
-
 )
 
 type AwsConf struct {

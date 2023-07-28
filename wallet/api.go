@@ -2,8 +2,8 @@ package wallet
 
 import (
 	"fmt"
-	"kcc/kcc-toolkit/convert"
-	"kcc/kcc-toolkit/webreq"
+	"gitee.com/westfruit/kcc-toolkit/convert"
+	"gitee.com/westfruit/kcc-toolkit/webreq"
 	"net/url"
 	"sort"
 	"strings"

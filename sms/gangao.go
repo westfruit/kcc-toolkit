@@ -5,9 +5,9 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"kcc/kcc-toolkit/convert"
-	"kcc/kcc-toolkit/encode"
-	"kcc/kcc-toolkit/http"
+	"gitee.com/westfruit/kcc-toolkit/convert"
+	"gitee.com/westfruit/kcc-toolkit/encode"
+	"gitee.com/westfruit/kcc-toolkit/http"
 
 	"github.com/thoas/go-funk"
 

@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"time"
 
-	_ "kcc/kcc-toolkit/conf"
+	_ "gitee.com/westfruit/kcc-toolkit/conf"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
@@ -73,7 +73,7 @@ func initTxyunClient(conf TxyunConf) error {
 	return nil
 }
 
-//上传文件流
+// 上传文件流
 func UploadToTxyun(fileName string, r io.Reader) (string, error) {
 	uploadName := fmt.Sprintf("%s/%s", txyunConf.UploadPath, fileName)
 

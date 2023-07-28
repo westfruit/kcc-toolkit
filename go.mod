@@ -1,4 +1,4 @@
-module kcc/kcc-toolkit
+module gitee.com/westfruit/kcc-toolkit
 
 go 1.18
 

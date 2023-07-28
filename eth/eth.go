@@ -3,7 +3,7 @@ package eth
 import (
 	"github.com/spf13/viper"
 
-	_ "kcc/kcc-toolkit/conf"
+	_ "gitee.com/westfruit/kcc-toolkit/conf"
 
 	"math/big"
 
