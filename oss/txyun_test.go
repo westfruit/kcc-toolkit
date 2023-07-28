@@ -10,9 +10,9 @@ import (
 
 func TestMain(m *testing.M) {
 	txyunConf = TxyunConf{
-		SecretId:   "AKIDVmnWy85kEn44vUlkDahY9VdUUFjwsXwA",
-		SecretKey:  "1lJhpgOyJOHtGOGuKUMyKPDmCORJwJQG",
-		BucketUrl:  "https://art-1302990433.cos.ap-guangzhou.myqcloud.com",
+		SecretId:   "",
+		SecretKey:  "",
+		BucketUrl:  "",
 		UploadPath: "upload",
 	}
 
