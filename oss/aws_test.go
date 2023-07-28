@@ -9,7 +9,7 @@ import (
 // 测试上传文件到aws
 func TestUploadToAws(t *testing.T) {
 
-	data, err := ioutil.ReadFile(`C:\Users\tan\Desktop\test.png`)
+	data, err := ioutil.ReadFile(`test.png`)
 	if err != nil {
 		t.Fatalf("reafile error, %s", err)
 		return
