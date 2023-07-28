@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3ea0729f-c14a-4c5f-abcc-4ec52a248439" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oss/aliyun.go" beforeDir="false" afterPath="$PROJECT_DIR$/oss/aliyun.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oss/aws.go" beforeDir="false" afterPath="$PROJECT_DIR$/oss/aws.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oss/local.go" beforeDir="false" afterPath="$PROJECT_DIR$/oss/local.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oss/oss.go" beforeDir="false" afterPath="$PROJECT_DIR$/oss/oss.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verify/mobile.go" beforeDir="false" afterPath="$PROJECT_DIR$/verify/mobile.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +50,14 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="kcc-toolkit" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="kcc-toolkit" />
       <working_directory value="$PROJECT_DIR$" />
@@ -50,6 +65,15 @@
       <package value="cryptoart/cryptoart-toolkit" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="kcc-toolkit" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <recent_temporary>

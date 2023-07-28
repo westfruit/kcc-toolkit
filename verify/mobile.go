@@ -2,7 +2,7 @@ package verify
 
 import "regexp"
 
-//mobile verify
+// mobile verify
 func VerifyMobileFormat(mobileNum string) bool {
 	regular := "^((13[0-9])|(14[4-9])|(15[0-3,5-9])|(16[0-9])|(17[0-8])|(18[0-9])|(19[0-9]))\\d{8}$"
 

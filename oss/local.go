@@ -47,3 +47,26 @@ func GetUploadPath() string {
 	}
 	return path
 }
+
+
+
+func GetDownLoadPath() string {
+	path := GetRootPath()
+	if OsType == "windows" {
+		path = path + "\\" + "html\\download\\"
+	} else {
+		path = path + "/" + "html/download/"
+	}
+	return path
+}
+
+func GetExportPath() string {
+	path := GetRootPath()
+
+	if OsType == "windows" {
+		path = path + "\\" + "html\\export\\"
+	} else {
+		path = path + "/" + "html/export/"
+	}
+	return path
+}

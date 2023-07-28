@@ -3,9 +3,9 @@ package oss
 import (
 	"bytes"
 	"encoding/base64"
+	"fmt"
 	"io"
-
-	_ "kcc/kcc-toolkit/conf"
+	"strings"
 
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
 	"github.com/sirupsen/logrus"
@@ -13,87 +13,168 @@ import (
 )
 
 //说明文档：https://help.aliyun.com/document_detail/88601.html
-
-// 上传配置
-type AliyunConf struct {
-	AccessKeyId     string
-	AccessKeySecret string
-	BucketName      string
-	Domain          string // 域名
-	EndPoint        string
-	UploadPath      string // oss上传路径
-	Region          string // 地区
-}
+//var datetime string = time.Now().UTC().Format(http.TimeFormat)
 
 var (
-	aliyunPrefix = "[oss-aliyun]"
-	aliyunConf   AliyunConf
-	aliClient    *oss.Client
-)
-
-const (
-	OSSConfKeyAliyun = "oss.aliyun"
+	AccessKeyID     string
+	AccessKeySecret string
+	BucketName      string
+	BucketUrl       string
+	EndPoint        string
+	PathPrefix      string
 )
 
 func init() {
-	// 初始化阿里云
-	if viper.IsSet(OSSConfKeyAliyun) {
-		if err := viper.UnmarshalKey(OSSConfKeyAliyun, &aliyunConf); err != nil {
-			logrus.Error(aliyunPrefix, "初始化阿里云OSS错误, ", err)
-		} else {
-			logrus.Info(aliyunPrefix, "初始化阿里云OSS成功")
-			initAliyunClient(aliyunConf)
-		}
-	} else {
-		logrus.Info(aliyunPrefix, "未配置阿里云OSS")
-	}
-}
-
-// 初始化阿里云OSS客户端
-func initAliyunClient(conf AliyunConf) {
-	if aliClient != nil {
-		logrus.Info(aliyunPrefix, "阿里云OSS客户端已初始化")
-		return
-	}
-
-	var err error
-	aliClient, err = oss.New(conf.EndPoint, conf.AccessKeyId, conf.AccessKeySecret)
-	if err != nil {
-		logrus.Error(aliyunPrefix, "创建OSSClient实例错误, ", err)
-	}
+	AccessKeySecret = viper.GetString("oss.aliyun.accessKeySecret")
+	AccessKeyID = viper.GetString("oss.aliyun.accessKeyId")
+	BucketName = viper.GetString("oss.aliyun.bucketName")
+	BucketUrl = viper.GetString("oss.aliyun.domain")
+	EndPoint = viper.GetString("oss.aliyun.endPoint")
+	PathPrefix = viper.GetString("oss.aliyun.prefix")
 }
 
 //上传文件流
-func ToAliyun(fileName string, r io.Reader) (string, error) {
+func FileUpload(fileName string, r io.Reader) (string, error) {
+	prefix := "【上传文件流】"
+
+	aliClient, err := oss.New(aliConf.EndPoint, aliConf.AccessKeyId, aliConf.AccessKeySecret)
+	if err != nil {
+		logrus.Error(prefix, "创建OSSClient实例异常：", err)
+		return "", err
+	}
 
 	// 获取存储空间
-	bucket, err := aliClient.Bucket(aliyunConf.BucketName)
+	bucket, err := aliClient.Bucket(aliConf.BucketName)
 	if err != nil {
-		logrus.Error(aliyunPrefix, "获取存储空间错误, ", err)
+		logrus.Error(prefix, "获取存储空间异常：", err)
 		return "", err
 	}
 
 	// 上传文件
-	uploadPath := aliyunConf.UploadPath + "/" + fileName
-
-	err = bucket.PutObject(uploadPath, r)
+	filePath := aliConf.UploadPath + "/" + fileName
+	err = bucket.PutObject(filePath, r)
 	if err != nil {
-		logrus.Error(aliyunPrefix, "上传文件流异常：", err)
+		logrus.Error(prefix, "上传文件流异常：", err)
 		return "", err
 	}
 
-	fileUrl := aliyunConf.Domain + "/" + uploadPath
-	logrus.Info(aliyunPrefix, "文件上传成功, 文件地址:", fileUrl)
+	fileUrl := aliConf.Domain + "/" + filePath
+	logrus.Info(prefix, "文件上传成功, 文件地址:", fileUrl)
 
 	return fileUrl, nil
 }
 
-//上传文件Base64
-func Base64ToAliyun(fileName string, fileData string) (string, error) {
-	byteData, err := base64.StdEncoding.DecodeString(fileData)
+//上传字符串
+func Base64Upload(key string, value string) (string, error) {
+	// 创建OSSClient实例
+	client, err := oss.New(EndPoint, AccessKeyID, AccessKeySecret)
 	if err != nil {
+		logrus.Error("创建OSSClient实例异常：", err)
 		return "", err
 	}
 
-	return ToAliyun(fileName, bytes.NewBuffer(byteData))
+	// 获取存储空间
+	bucket, err := client.Bucket(BucketName)
+	if err != nil {
+		logrus.Error("获取存储空间异常：", err)
+		return "", err
+	}
+
+	// 上传字符串
+	base64Bytes, _ := base64.StdEncoding.DecodeString(value) //成图片文件并把文件写入到buffer
+	buffer := bytes.NewBuffer(base64Bytes)                   // 必须加一个buffer 不然没有read方法就会报错
+
+	err = bucket.PutObject(key, buffer)
+	if err != nil {
+		logrus.Error("上传字符串异常：", err)
+		return "", err
+	}
+	filePath := fmt.Sprintf("%s/%s", BucketUrl, key)
+	return filePath, nil
+}
+
+//文件流方式上传（本地不存文件）
+func StreamUpload(ossFileName string, r io.Reader) (string, error) {
+	prefix := "【上传文件流】"
+	// 创建OSSClient实例
+	client, err := oss.New(EndPoint, AccessKeyID, AccessKeySecret)
+	if err != nil {
+		logrus.Error(prefix, "创建OSSClient实例异常：", err)
+		return "", err
+	}
+
+	// 获取存储空间
+	bucket, err := client.Bucket(BucketName)
+	if err != nil {
+		logrus.Error(prefix, "获取存储空间异常：", err)
+		return "", err
+	}
+
+	// 上传文件
+	filePath := PathPrefix + "/" + ossFileName
+	err = bucket.PutObject(filePath, r)
+	if err != nil {
+		logrus.Error(prefix, "上传文件流异常：", err)
+		return "", err
+	}
+
+	filePath = BucketUrl + "/" + filePath
+
+	return filePath, nil
+}
+
+//上传字符串
+func AliyunUploadString(key string, value string) error {
+	// 创建OSSClient实例
+	client, err := oss.New(EndPoint, AccessKeyID, AccessKeySecret)
+	if err != nil {
+		logrus.Error("创建OSSClient实例异常：", err)
+		return err
+	}
+
+	// 获取存储空间
+	bucket, err := client.Bucket(BucketName)
+	if err != nil {
+		logrus.Error("获取存储空间异常：", err)
+		return err
+	}
+
+	// 上传字符串
+	err = bucket.PutObject(key, strings.NewReader(value))
+	if err != nil {
+		logrus.Error("上传字符串异常：", err)
+		return err
+	}
+
+	return nil
+}
+
+//上传文件流
+func AliyunUploadStream(ossFileName string, r io.Reader) (string, error) {
+	prefix := "【上传文件流】"
+	// 创建OSSClient实例
+	client, err := oss.New(EndPoint, AccessKeyID, AccessKeySecret)
+	if err != nil {
+		logrus.Error(prefix, "创建OSSClient实例异常：", err)
+		return "", err
+	}
+
+	// 获取存储空间
+	bucket, err := client.Bucket(BucketName)
+	if err != nil {
+		logrus.Error(prefix, "获取存储空间异常：", err)
+		return "", err
+	}
+
+	// 上传文件
+	filePath := PathPrefix + "/" + ossFileName
+	err = bucket.PutObject(filePath, r)
+	if err != nil {
+		logrus.Error(prefix, "上传文件流异常：", err)
+		return "", err
+	}
+
+	filePath = BucketUrl + "/" + filePath
+
+	return filePath, nil
 }

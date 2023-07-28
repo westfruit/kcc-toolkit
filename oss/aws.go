@@ -16,15 +16,9 @@ import (
 	"kcc/kcc-toolkit/convert"
 )
 
-const (
-	OSSConfKeyAws = "oss.aws"
-)
-
 var (
 	awsPrefix = "[oss-aws]"
-	awsConf   AwsConf
 
-	uploader *s3manager.Uploader
 )
 
 type AwsConf struct {
