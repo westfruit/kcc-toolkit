@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"gitee.com/westfruit/kcc-toolkit/convert"
+	"github.com/westfruit/kcc-toolkit/convert"
 )
 
 func Get(url string) (string, error) {

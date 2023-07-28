@@ -5,7 +5,7 @@ import (
 
 	"context"
 
-	_ "gitee.com/westfruit/kcc-toolkit/conf"
+	_ "github.com/westfruit/kcc-toolkit/conf"
 
 	"math/big"
 	"reflect"

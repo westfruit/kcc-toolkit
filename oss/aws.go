@@ -12,8 +12,8 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 
-	_ "gitee.com/westfruit/kcc-toolkit/conf"
-	"gitee.com/westfruit/kcc-toolkit/convert"
+	_ "github.com/westfruit/kcc-toolkit/conf"
+	"github.com/westfruit/kcc-toolkit/convert"
 )
 
 var (

@@ -5,8 +5,8 @@ import (
 	"crypto/md5"
 	"crypto/sha256"
 	"fmt"
-	"gitee.com/westfruit/kcc-toolkit/convert"
-	"gitee.com/westfruit/kcc-toolkit/webreq"
+	"github.com/westfruit/kcc-toolkit/convert"
+	"github.com/westfruit/kcc-toolkit/webreq"
 	"strings"
 
 	"github.com/google/uuid"

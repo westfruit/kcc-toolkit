@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"time"
 
-	_ "gitee.com/westfruit/kcc-toolkit/conf"
+	_ "github.com/westfruit/kcc-toolkit/conf"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"

@@ -1,4 +1,4 @@
-module gitee.com/westfruit/kcc-toolkit
+module github.com/westfruit/kcc-toolkit
 
 go 1.18
 

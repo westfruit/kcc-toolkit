@@ -2,7 +2,7 @@ package conf
 
 import (
 	"fmt"
-	"gitee.com/westfruit/kcc-toolkit/fileop"
+	"github.com/westfruit/kcc-toolkit/fileop"
 	"io"
 	"os"
 	"os/exec"

@@ -2,9 +2,9 @@ package udun
 
 import (
 	"fmt"
-	"gitee.com/westfruit/kcc-toolkit/convert"
-	"gitee.com/westfruit/kcc-toolkit/security"
-	"gitee.com/westfruit/kcc-toolkit/webreq"
+	"github.com/westfruit/kcc-toolkit/convert"
+	"github.com/westfruit/kcc-toolkit/security"
+	"github.com/westfruit/kcc-toolkit/webreq"
 	"strings"
 	"time"
 
