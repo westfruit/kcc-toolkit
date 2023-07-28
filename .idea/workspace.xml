@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ea0729f-c14a-4c5f-abcc-4ec52a248439" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/conf/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/conf/conf.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/convert/math_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/convert/math_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/eth.go" beforeDir="false" afterPath="$PROJECT_DIR$/eth/eth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/eth/util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geetest/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/geetest/api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/http/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oss/aws.go" beforeDir="false" afterPath="$PROJECT_DIR$/oss/aws.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oss/txyun.go" beforeDir="false" afterPath="$PROJECT_DIR$/oss/txyun.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisclient/redisclient.go" beforeDir="false" afterPath="$PROJECT_DIR$/redisclient/redisclient.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms/gangao.go" beforeDir="false" afterPath="$PROJECT_DIR$/sms/gangao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udun/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/udun/api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
