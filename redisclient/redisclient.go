@@ -2,10 +2,11 @@ package redisclient
 
 import (
 	"context"
+
+	"github.com/sirupsen/logrus"
 	_ "github.com/westfruit/kcc-toolkit/conf"
 
-	redis "github.com/go-redis/redis/v8"
-	"github.com/sirupsen/logrus"
+	redis "github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 )
 
