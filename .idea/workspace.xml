@@ -30,6 +30,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -97,11 +98,18 @@
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
+=======
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4,
+  "fromUser": false
+}]]></component>
+>>>>>>> 71607d409446000502dedde430a331cba274eba2
   <component name="ProjectId" id="2ILNfkcukGIl334yD4wBvtQOo6b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
@@ -139,6 +147,42 @@
 }</component>
   <component name="RunManager" selected="Go 构建.go build main.go">
     <configuration name="go build github.com/westfruit/kcc-toolkit" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go 构建.go build main.go.executor": "Run",
+    "RunOnceActivity.GoLinterPluginOnboardingV2": "true",
+    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
+    "RunOnceActivity.GoOptimizationToolWindowEnableInLayout.v333333": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.analysis.ui.options.defaults": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "configurable..is.expanded": "false",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Project/kcc/kcc-toolkit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "go.dep"
+  }
+}]]></component>
+  <component name="RunManager" selected="Go 构建.go build main.go">
+    <configuration name="go build kcc-toolkit/" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+>>>>>>> 71607d409446000502dedde430a331cba274eba2
       <module name="kcc-toolkit" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
@@ -173,16 +217,24 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
+<<<<<<< HEAD
       <created>1789552803476</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1789552803476</updated>
+=======
+      <created>1789461628174</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789461628174</updated>
+>>>>>>> 71607d409446000502dedde430a331cba274eba2
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
   <component name="VgoModernizerVersionTracker">
     <upgrades>
       <map>
@@ -197,4 +249,6 @@
       </map>
     </upgrades>
   </component>
+=======
+>>>>>>> 71607d409446000502dedde430a331cba274eba2
 </project>
