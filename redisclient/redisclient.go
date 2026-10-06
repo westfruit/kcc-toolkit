@@ -4,7 +4,7 @@ import (
 	"context"
 	_ "github.com/westfruit/kcc-toolkit/conf"
 
-	redis "github.com/go-redis/redis/v8"
+	redis "github.com/redis/go-redis/v9"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
